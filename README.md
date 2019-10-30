@@ -2,6 +2,8 @@
 
 Once generating contract test, exception is `java.lang.NoClassDefFoundError: org/jetbrains/kotlin/cli/jvm/repl/GenericReplCompiler`  
 
+## Configuration
+
 Gradle version 
 ```
 Gradle 5.6.3
