@@ -17,6 +17,9 @@ buildscript {
     }
 	dependencies {
 		classpath("org.springframework.cloud:spring-cloud-contract-spec-kotlin:2.2.0.RC1")
+		val kotlinVersion = "1.3.50"
+		classpath(kotlin("scripting-compiler-embeddable:$kotlinVersion"))
+		classpath(kotlin("compiler-embeddable:$kotlinVersion"))
 	}
 }
 
@@ -69,6 +72,8 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test") { exclude(module = "junit") }
     testRuntime("org.junit.jupiter:junit-jupiter-engine")
 	testImplementation("org.springframework.cloud:spring-cloud-contract-spec-kotlin")
+	testImplementation(kotlin("scripting-compiler-embeddable"))
+	testImplementation(kotlin("compiler-embeddable"))
 }
 
 tasks.withType<Test> { useJUnitPlatform() }
