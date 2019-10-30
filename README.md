@@ -18,9 +18,9 @@ JVM:          11.0.5 (AdoptOpenJDK 11.0.5+10)
 OS:           Mac OS X 10.15 x86_64
 ```
 
-Spring Boot : 2.2.0.RELEASE
-Spring Cloud : Hoxton.RC1
-Spring Cloud Contract : 2.2.0.RC1
+* Spring Boot : 2.2.0.RELEASE
+* Spring Cloud : Hoxton.RC1
+* Spring Cloud Contract : 2.2.0.RC1
 
 ## Run
 
