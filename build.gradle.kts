@@ -17,15 +17,13 @@ buildscript {
     }
 	dependencies {
 		classpath("org.springframework.cloud:spring-cloud-contract-spec-kotlin:2.2.0.RC1")
-		val kotlinVersion = "1.3.50"
-		classpath(kotlin("scripting-compiler-embeddable:$kotlinVersion"))
-		classpath(kotlin("compiler-embeddable:$kotlinVersion"))
 	}
 }
 
 plugins {
     val kotlinVersion = "1.3.50"
-    kotlin("jvm") version kotlinVersion
+	// This fixes it
+    kotlin("jvm") version "1.3.31"
     kotlin("plugin.spring") version kotlinVersion
     id("org.springframework.boot") version "2.2.0.RELEASE"
 	id("org.springframework.cloud.contract") version "2.2.0.RC1"
@@ -69,11 +67,9 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test")
     testImplementation("io.rest-assured:spring-web-test-client")
     testImplementation("org.junit.jupiter:junit-jupiter-api")
-    testImplementation("org.springframework.boot:spring-boot-starter-test") { exclude(module = "junit") }
+    testImplementation("org.springframework.boot:spring-boot-starter-test") { exclude("junit") }
     testRuntime("org.junit.jupiter:junit-jupiter-engine")
 	testImplementation("org.springframework.cloud:spring-cloud-contract-spec-kotlin")
-	testImplementation(kotlin("scripting-compiler-embeddable"))
-	testImplementation(kotlin("compiler-embeddable"))
 }
 
 tasks.withType<Test> { useJUnitPlatform() }
